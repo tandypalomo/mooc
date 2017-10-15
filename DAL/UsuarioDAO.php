@@ -28,43 +28,37 @@ class UsuarioDAO {
         $email = $usuario->getEmail();
         $senha = $usuario->getSenha();
         $telefone = $usuario->getTelefone();
-        echo $nome;
-        $sql = "insert into aluno (nome, cpf, email, senha, telefone) values 
-        ('$nome', '$cpf', '$email', '$senha', '$telefone')";
+        $tipo = $usuario->getTipo();
+        
+        $sql = "insert into aluno (nome, cpf, email, senha, telefone, tipo) values 
+        ('$nome', '$cpf', '$email', '$senha', '$telefone', '$tipo')";
 
         $query = $mysqli->query($sql);
 
         return $query->affected_rows;
     }
 
-    public static function loginAluno() {
+    function logar($email, $senha) {
+        $mysqli = new mysqli('localhost', 'root', 'root', 'mooc');
 
-        $sql = "select * from aluno where email='" . $login . "' and senha='" . $senha . "'";
-        $resultados = mysql_query($sql)or die(mysql_error());
-        $res = mysql_fetch_array($resultados); //
-        if (@mysql_num_rows($resultados) == 0) {
-            return FALSE;
-        } else
-            return TRUE;
-    }
-
-    public function RetornarTodos() {
-        sleep(1); //Pausa proposital para explicação do beforeSend e complete do AJAX.
-        try {
-            $listaUsuario = [];
-
-            for ($i = 0; $i < 10; $i++) {
-                $usuario = new Usuario();
-                $usuario->setNome("Nome: {$i}");
-                $usuario->setEmail("mail@dominio.com");
-                $usuario->setTelefone("(18) 998{$i}");
-
-                $listaUsuario[] = $usuario;
+        $sql = "SELECT * from aluno where email=" . $email . " and senha=" . $senha . "";
+        $resultados = $mysqli->query($sql);
+        $res=mysqli_fetch_array($resultados);
+        if (mysqli_num_rows($resultados)>0) { 
+            
+            if (!isset($_SESSION)) {  //verifica se há sessão aberta
+                session_start();  //Inicia seção
+                //Abrindo seções
+                $_SESSION['usuarioID'] = $res['id'];
+                $_SESSION['nomeUsuario'] = $res['nome'];
+                $_SESSION['email'] = $res['email'];
+                $_SESSION['tipo'] = $res['tipo'];
+                echo $_SESSION['tipo'];
+                exit;
             }
-
-            return $this->serialize->serialize($listaUsuario);
-        } catch (Exception $ex) {
-            return $ex->getMessage();
+        } else {
+            
+            return "Login ou senha invalido";
         }
     }
 

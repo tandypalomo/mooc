@@ -16,10 +16,11 @@ if ($req) {
         $usuario->setCpf(filter_input(INPUT_POST, "cpf"));
         $usuario->setSenha(filter_input(INPUT_POST, "senha"));
         $usuario->setTelefone(filter_input(INPUT_POST, "txtTelefone"));
+        $usuario->setTipo(filter_input(INPUT_POST, "tipo"));
         
         
         
-        echo $usuarioController->Cadastrar($usuario);
+        return $usuarioController->Cadastrar($usuario);
     }
  
  
@@ -27,6 +28,17 @@ if ($req) {
         //Retornar todos
         echo $usuarioController->RetornarTodos();
     }
+    
+    
+    if ($req == "3") {
+        
+        $email = filter_input(INPUT_POST, "email");
+        $senha = filter_input(INPUT_POST, "senha");
+        
+        echo $usuarioController->Logar($email, $senha);
+        
+    }
+    
 }
 
 ?>

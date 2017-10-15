@@ -9,6 +9,7 @@ class Usuario {
     private $telefone;
     private $senha;
     private $cpf;
+    private $tipo;
  
 //    public static function createAluno($nome, $cpf, $email, $senha, $telefone ){
 //        $mysqli = new mysqli('localhost', 'root', 'root', 'mooc');
@@ -40,6 +41,10 @@ class Usuario {
     function getTelefone() {
         return $this->telefone;
     }
+    
+    function getTipo() {
+        return $this->tipo;
+    }
  
     function setNome($nome) {
         $this->nome = $nome;
@@ -59,6 +64,10 @@ class Usuario {
  
     function setTelefone($telefone) {
         $this->telefone = $telefone;
+    }
+    
+    function setTipo($tipo){
+        $this->tipo = $tipo;
     }
  
 

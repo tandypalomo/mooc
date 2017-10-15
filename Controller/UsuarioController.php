@@ -16,16 +16,20 @@ class UsuarioController {
 
         if ($usuario->getNome() != "" && $usuario->getEmail() != "") {
 
-            UsuarioDAO::createAluno($usuario);
-            return $this->usuarioDAO->Cadastrar($usuario);
+            return UsuarioDAO::createAluno($usuario);
+            
         } else {
             return "invalido";
         }
     }
-    
 
     public function RetornarTodos() {
         return $this->usuarioDAO->RetornarTodos();
+    }
+
+    function Logar($email, $senha) {
+
+        echo UsuarioDAO::logar($email, $senha);
     }
 
 }
