@@ -21,7 +21,7 @@ class UsuarioDAO {
         }
     }
 
-    public static function createAluno(Usuario $usuario) {
+    public static function createUsuario(Usuario $usuario) {
         $mysqli = new mysqli('localhost', 'root', 'root', 'mooc');
         $nome = $usuario->getNome();
         $cpf = $usuario->getCpf();
@@ -30,7 +30,7 @@ class UsuarioDAO {
         $telefone = $usuario->getTelefone();
         $tipo = $usuario->getTipo();
         
-        $sql = "insert into aluno (nome, cpf, email, senha, telefone, tipo) values 
+        $sql = "insert into usuario (nome, cpf, email, senha, telefone, tipo) values 
         ('$nome', '$cpf', '$email', '$senha', '$telefone', '$tipo')";
 
         $query = $mysqli->query($sql);
@@ -41,7 +41,7 @@ class UsuarioDAO {
     function logar($email, $senha) {
         $mysqli = new mysqli('localhost', 'root', 'root', 'mooc');
 
-        $sql = "SELECT * from aluno where email=" . $email . " and senha=" . $senha . "";
+        $sql = "SELECT * from usuario where email=" . $email . " and senha=" . $senha . "";
         $resultados = $mysqli->query($sql);
         $res=mysqli_fetch_array($resultados);
         if (mysqli_num_rows($resultados)>0) { 

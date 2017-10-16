@@ -4,58 +4,6 @@
         <meta charset="UTF-8">
         <title>MOOC</title>
 
-        <style>
-            *{
-                margin:0 auto;
-                padding: 0;
-                font-family: "Segoe UI";
-            }
-
-            body{
-                background-color: #EEE;
-            }
-
-            h1{
-                font-weight: 300;
-                text-align: center;
-            }
-
-            ul{
-                list-style: none;
-            }
-
-            .centro{
-                max-width: 600px;
-                width:100%;
-                background-color: #FFF;
-                border:2px solid #CCC;
-                box-shadow: 0 0 5px #000;
-            }
-
-            .texto{
-                font-weight: bold;
-            }
-
-            .break{
-                margin-bottom:10px;
-            }
-
-            #dvForm{
-                padding:10px;
-            }
-
-            input[type=text]{
-                padding: 5px;
-                width:100%;
-                max-width:550px;
-                outline-color: pink;
-            }
-
-            input[type=button]{
-                padding: 5px;
-                outline: none;
-            }
-        </style>
         <script src="../js/jquery-3.2.1.min.js" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="../plugins/bootstrap/css/bootstrap.min.css"> 
     </head>

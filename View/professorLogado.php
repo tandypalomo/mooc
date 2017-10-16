@@ -10,7 +10,7 @@ and open the template in the editor.
         session_start();  //A seção deve ser iniciada em todas as páginas
         if (!isset($_SESSION['usuarioID']) || $_SESSION['tipo']!='1') {  //Verifica se há seções e se é professor
             session_destroy();      //Destroi a seção por segurança
-            header("Location: viewLogin.php");
+            header("Location: ../index.php");
             exit; //Redireciona o visitante para login
         }
         ?>

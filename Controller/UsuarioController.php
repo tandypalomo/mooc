@@ -16,7 +16,7 @@ class UsuarioController {
 
         if ($usuario->getNome() != "" && $usuario->getEmail() != "") {
 
-            return UsuarioDAO::createAluno($usuario);
+            return UsuarioDAO::createUsuario($usuario);
             
         } else {
             return "invalido";
