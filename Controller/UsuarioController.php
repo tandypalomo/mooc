@@ -19,12 +19,8 @@ class UsuarioController {
             return UsuarioDAO::createUsuario($usuario);
             
         } else {
-            return "invalido";
+            return FALSE;
         }
-    }
-
-    public function RetornarTodos() {
-        return $this->usuarioDAO->RetornarTodos();
     }
 
     function Logar($email, $senha) {

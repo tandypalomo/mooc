@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class=" col-md-12 ">
-            <div class="col-md-6 text-left"><p>MOOC ACESSICILIDADE</p></div>
+            <div class="col-md-6 text-left"><p>MOOC ACESSIBILIDADE</p></div>
             <div class="text-right">
                 <button type="button" class="btn-lg btn-info" data-toggle="modal" data-target="#modalLogin">Login</button>
                 <button type="button" class="btn-lg btn-info" data-toggle="modal" data-target="#modalCadastro">Cadastrar</button>
@@ -18,7 +18,7 @@
         </div>
         <hr />
         <div class="text-center">
-            <img src="imagens/logo.jpg"> 
+            <img src="imagens/logo.jpg">
         </div>
     </body>
 </html>
@@ -63,7 +63,7 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <div class="text-center">
-                    
+
                     <h1>Cadastro Usuário</h1>
                 </div>
             </div>
@@ -94,15 +94,16 @@
                     <br>
                     <div>
                         <select class="input-lg" name="tipo" id="tipo">
-                            <option value="0" selected>Aluno</option> 
+                            <option value="0" selected>Aluno</option>
                             <option value="1">Professor</option>
+                            <option value="2">Interprete</option>
                         </select>
                     </div>
                     <br>
 
                     <div class="texto" id="resultado"></div>
 
-                    <input class="btn-primary btn-lg" type="button" id="btnCadastrar" value="Cadastrar" />
+                    <button class="btn-primary btn-lg" type="button" id="btnCadastrar">Cadastrar</button>
                 </div>
             </div>
             <div class="modal-footer">

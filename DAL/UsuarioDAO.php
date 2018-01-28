@@ -2,8 +2,7 @@
 
 require_once("../Util/ClassSerialization.php");
 require_once("../Model/Usuario.php");
-require_once("../Model/Usuario.php");
-include './connection.php';
+include ("./connection.php");
 
 class UsuarioDAO {
 
@@ -11,14 +10,6 @@ class UsuarioDAO {
 
     public function __construct() {
         $this->serialize = new ClassSerialization();
-    }
-
-    function Cadastrar(Usuario $usuario) {
-        if ($usuario->getNome() != "" && $usuario->getEmail() != "" && $usuario->getTelefone() != "") {
-            return "Cadastrado. Nome: {$usuario->getNome()} E-mail: {$usuario->getEmail()} Telefone: {$usuario->getTelefone()}";
-        } else {
-            return "invalido";
-        }
     }
 
     public static function createUsuario(Usuario $usuario) {

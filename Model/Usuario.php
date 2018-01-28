@@ -1,6 +1,5 @@
 <?php
 
-//include './connection.php';
 
 class Usuario {
  
@@ -11,16 +10,7 @@ class Usuario {
     private $cpf;
     private $tipo;
  
-//    public static function createAluno($nome, $cpf, $email, $senha, $telefone ){
-//        $mysqli = new mysqli('localhost', 'root', 'root', 'mooc');
-//        
-//        $sql = "insert into aluno (nome, cpf, email, senha, telefone) values 
-//        ('$nome', '$cpf', '$email', '$senha', '$telefone')";
-//
-//        $query = $mysqli->query($sql);
-//
-//        return $query->affected_rows;   
-//    }
+
     
     function getNome() {
         return $this->nome;
