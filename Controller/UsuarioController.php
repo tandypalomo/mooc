@@ -17,7 +17,7 @@ class UsuarioController {
         if ($usuario->getNome() != "" && $usuario->getEmail() != "") {
 
             return UsuarioDAO::createUsuario($usuario);
-            
+
         } else {
             return FALSE;
         }
@@ -25,7 +25,7 @@ class UsuarioController {
 
     function Logar($email, $senha) {
 
-        echo UsuarioDAO::logar($email, $senha);
+        return UsuarioDAO::logar($email, $senha);
     }
 
 }

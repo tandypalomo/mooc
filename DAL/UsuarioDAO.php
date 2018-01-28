@@ -20,8 +20,8 @@ class UsuarioDAO {
         $senha = $usuario->getSenha();
         $telefone = $usuario->getTelefone();
         $tipo = $usuario->getTipo();
-        
-        $sql = "insert into usuario (nome, cpf, email, senha, telefone, tipo) values 
+
+        $sql = "insert into usuario (nome, cpf, email, senha, telefone, tipo) values
         ('$nome', '$cpf', '$email', '$senha', '$telefone', '$tipo')";
 
         $query = $mysqli->query($sql);
@@ -35,8 +35,8 @@ class UsuarioDAO {
         $sql = "SELECT * from usuario where email=" . $email . " and senha=" . $senha . "";
         $resultados = $mysqli->query($sql);
         $res=mysqli_fetch_array($resultados);
-        if (mysqli_num_rows($resultados)>0) { 
-            
+        if (mysqli_num_rows($resultados)>0) {
+
             if (!isset($_SESSION)) {  //verifica se há sessão aberta
                 session_start();  //Inicia seção
                 //Abrindo seções
@@ -48,7 +48,7 @@ class UsuarioDAO {
                 exit;
             }
         } else {
-            
+
             return "Login ou senha invalido";
         }
     }

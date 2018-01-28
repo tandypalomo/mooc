@@ -43,7 +43,7 @@ if ($req) {
         $email = filter_input(INPUT_POST, "email");
         $senha = filter_input(INPUT_POST, "senha");
 
-        echo $usuarioController->Logar($email, $senha);
+        return $usuarioController->Logar($email, $senha);
     }
 }
 ?>

@@ -7,13 +7,13 @@ and open the template in the editor.
 <html>
     <head>
         <?php
-        // session_start();  //A seção deve ser iniciada em todas as páginas
-        // if (!isset($_SESSION['usuarioID']) || $_SESSION['tipo'] != '1') {  //Verifica se há seções e se é professor
-        //     session_destroy();      //Destroi a seção por segurança
-        //     header("Location: ../index.php");
-        //     exit; //Redireciona o visitante para login
-        // }
-        // ?>
+        session_start();  //A seção deve ser iniciada em todas as páginas
+        if (!isset($_SESSION['usuarioID']) || $_SESSION['tipo'] != '1') {  //Verifica se há seções e se é professor
+            session_destroy();      //Destroi a seção por segurança
+            header("Location: ../index.php");
+            exit; //Redireciona o visitante para login
+        }
+        ?>
         <meta charset="UTF-8">
         <title></title>
 

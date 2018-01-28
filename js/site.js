@@ -72,7 +72,7 @@ function loadCategories() {
                 dataType: "html",
                 data: dados,
                 success: function (result) {
-                    // 0->aluno 1->professor 2->admin
+                    //0->aluno 1->professor 2->admin
                     if (result == '0') {
                         location.href = 'View/alunoLogado.php';
                     }
@@ -85,7 +85,7 @@ function loadCategories() {
                     $("#resultado").html(result);
                 },
                 error: function (result) {
-                    console.log(result);
+                    alert("Erro inesperado!")
                 }
 
             });
