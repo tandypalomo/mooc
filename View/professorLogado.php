@@ -33,7 +33,7 @@ and open the template in the editor.
             </div>
             <div class="text-right">
 
-                <a type="button" href="../Action/UsuarioAC.php?req=0" class="btn-lg btn-danger" id="sair" >Sair</a>
+                <a type="button" href="../Action/UsuarioAC.php?req=0" class="btn-lg btn-danger" id="btnSair" >Sair</a>
             </div>
         </div>
         <hr />

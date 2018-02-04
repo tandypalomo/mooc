@@ -1,15 +1,25 @@
 $(document).ready(function () {
-    
+
+    $("#btnSair").click(function () {
+      $.ajax({
+        url: "../Action/ProfessorAc.php?req=logout",
+        success: function (data){
+          
+        }
+      });
+
+    });
+
     $("#btnCadastraCurso").click(function () {
 
         var dados = {
             nomeCurso: $("#nomeCurso").val(),
             chaveCurso: $("#chaveCurso").val(),
             descricao: $("#descricao").val(),
-            idProfessor: $('#idProfessor').val()            
+            idProfessor: $('#idProfessor').val()
         };
-        
-        
+
+
         $.ajax({
                         url: "../Action/ProfessorAC.php?req=1",
                         type: "post",
@@ -26,6 +36,5 @@ $(document).ready(function () {
 
                     });
     });
-            
-});
 
+});
