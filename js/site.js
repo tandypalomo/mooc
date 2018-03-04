@@ -91,6 +91,16 @@ function loadCategories() {
             });
         });
 
+        $('.btn-sair').click(function(){
+          $.ajax({
+                url: "../Action/UsuarioAC.php?req=sair",
+                success: function(data){
+                    window.location.href = data;
+                }
+            });
 
-}
-);
+          });
+
+
+
+});

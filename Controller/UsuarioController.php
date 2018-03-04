@@ -28,6 +28,12 @@ class UsuarioController {
         return UsuarioDAO::logar($email, $senha);
     }
 
+    function Logout($email, $senha) {
+
+        return UsuarioDAO::Logout();
+
+    }
+
 }
 
 ?>

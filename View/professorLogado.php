@@ -12,7 +12,7 @@ and open the template in the editor.
             session_destroy();      //Destroi a seção por segurança
             header("Location: ../index.php");
             exit; //Redireciona o visitante para login
-        }
+        } else {
         ?>
         <meta charset="UTF-8">
         <title></title>
@@ -33,7 +33,7 @@ and open the template in the editor.
             </div>
             <div class="text-right">
 
-                <a type="button" href="../Action/UsuarioAC.php?req=0" class="btn-lg btn-danger" id="sair" >Sair</a>
+                <a type="button" class="btn-sair btn-lg btn-danger" id="sair" >Sair</a>
             </div>
         </div>
         <hr />
@@ -138,3 +138,4 @@ and open the template in the editor.
         </div>
     </div>
 </div>
+<?php } ?>

@@ -45,5 +45,10 @@ if ($req) {
 
         return $usuarioController->Logar($email, $senha);
     }
+
+    if ($req == "sair") {
+
+        return $usuarioController->Logout();
+    }
 }
 ?>
