@@ -42,7 +42,7 @@ function loadCategories() {
             };
 
             $.ajax({
-                url: "Action/UsuarioAC.php?req=1",
+                url: "Action/UsuarioAC.php?req=cadastrar",
                 type: "post",
                 dataType: "html",
                 data: dados,
@@ -67,7 +67,7 @@ function loadCategories() {
             };
 
             $.ajax({
-                url: "../Action/UsuarioAC.php?req=3",
+                url: "../Action/UsuarioAC.php?req=logar",
                 type: "post",
                 dataType: "html",
                 data: dados,

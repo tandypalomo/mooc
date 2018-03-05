@@ -14,7 +14,7 @@ if ($req) {
         exit;
     }
 
-    if ($req == "1") {
+    if ($req == "cadastrar") {
         //Cadastrar
         require_once("../Model/Usuario.php");
         $usuario = new Usuario();
@@ -38,7 +38,7 @@ if ($req) {
     }
 
 
-    if ($req == "3") {
+    if ($req == "logar") {
 
         $email = filter_input(INPUT_POST, "email");
         $senha = filter_input(INPUT_POST, "senha");

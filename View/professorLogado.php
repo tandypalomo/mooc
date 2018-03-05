@@ -39,7 +39,7 @@ and open the template in the editor.
         <hr />
 
         <div class="container-fluid">
-            <div id="vocabulary" class="vocabulary-container">
+            <div id="cursos" class="cursos-container">
 
                 <div class="row">
                     <div class="col-md-3 col-sm-4 col-xs-12 vocabulary-category-list-container">
@@ -47,7 +47,11 @@ and open the template in the editor.
                         <br>
                         <br>
                         <h4 class="text-center">Meus cursos</h4>
-                        <div class="list-group vocabulary-list" id="cursosList"></div>
+                        <div class="list-group vocabulary-list">
+                          <ul id="cursos">
+                          </ul>
+
+                        </div>
                     </div>
                     <div class="col-md-9">
                         <br>

@@ -11,7 +11,7 @@ $(document).ready(function () {
 
 
         $.ajax({
-                        url: "../Action/ProfessorAC.php?req=1",
+                        url: "../Action/ProfessorAC.php?req=cadastrarCurso",
                         type: "post",
                         dataType: "html",
                         data: dados,
@@ -27,12 +27,35 @@ $(document).ready(function () {
                     });
     });
 
-    function getAulas()
-    {
-      $.get('../Action/ProfessorAC.php?req=getAulas', function(response) {
-        var investData = response.data;
-
-      }, 'json');
-    }
+    getCurso();
 
 });
+
+function getCurso()
+{
+  $.ajax({
+		type:'post',		//Definimos o método HTTP usado
+		dataType: 'json',	//Definimos o tipo de retorno
+		url: '../Action/ProfessorAC.php?req=getCurso',//Definindo o arquivo onde serão buscados os dados
+		success: function(dados){
+
+			for(var i=0;dados.length>i;i++){
+				$('#cursos').append('<li>'+dados[i].nomeCurso+'<ul id="aula"'+ dados[i].id +'></ul></li>');
+			}
+
+      // $.ajax({
+      //   type:'post',		//Definimos o método HTTP usado
+      //   dataType: 'json',	//Definimos o tipo de retorno
+      //   url: '../Action/ProfessorAC.php?req=getAula',//Definindo o arquivo onde serão buscados os dados
+      //   success: function(aulas){
+      //
+      //     for(var i=0;dados.length>i;i++){
+      //
+      //       $('#cursos').append('<li>'+dados[i].nomeCurso+'</li>');
+      //     }
+      //   }
+      // });
+		}
+	});
+
+}
